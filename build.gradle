@@ -4,9 +4,32 @@ apply plugin: 'eclipse-wtp'
 
 repositories {
    mavenCentral()
+   jcenter()
+}
+
+buildscript{
+  repositories {
+     mavenCentral()
+     jcenter()
+  }
+
+  dependencies {
+   classpath 'com.netflix.nebula:gradle-ospackage-plugin:3.0.0'
+//             'org.spockframework:spock-core:jar:1.0-groovy-2.4'
+  }
 }
 
 dependencies {
    providedCompile 'javax.servlet:servlet-api:2.5'
    runtime 'javax.servlet:jstl:1.1.2'
+}
+
+apply plugin: 'nebula.rpm'
+
+task fooRpm(type: Rpm) {
+        release '1'
+	into '/var/lib/tomcat/webapps'
+	from('build/libs') {
+            into 'hello'
+        }
 }
