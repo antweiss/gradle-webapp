@@ -1,9 +1,17 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'org.akhikhl.gretty:gretty:+'
+  }
+}
 apply plugin: 'war'
-apply plugin: 'jetty'
-apply plugin: 'eclipse-wtp'
+apply plugin: 'org.akhikhl.gretty'
 
 repositories {
    mavenCentral()
+   jcenter()
 }
 
 dependencies {
