@@ -1,0 +1,5 @@
+#!/usrl/bin/python
+import requests
+r = requests.get('http://54.206.87.193/gradle-webapp/')
+print r.text
+ 
