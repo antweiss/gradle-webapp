@@ -1,0 +1,67 @@
+- name: Sqlink Project
+  become: yes
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Project
+      ec2:
+        key_name: "MyNewKey"
+        group_id: "sg-bd53b5c4"
+        vpc_subnet_id: "subnet-a3dbc0fa"
+        region: "ap-southeast-2"
+        access_key: "AKIAISVCVU5BLYFOI5KA"
+        secret_key: "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"
+        instance_type: "t2.micro"
+        image: "ami-1987757b"
+        wait: true
+        volumes:
+          - device_name: /dev/sda1
+            volume_size: 10
+            delete_on_termination: true
+        instance_tags:
+          Name: "target node" 
+        count: 1
+      register: aws
+
+  tasks:
+    - name: Project
+      ec2:
+        key_name: "MyNewKey"
+        group_id: "sg-bd53b5c4"
+        vpc_subnet_id: "subnet-a3dbc0fa"
+        region: "ap-southeast-2"
+        access_key: "AKIAISVCVU5BLYFOI5KA"
+        secret_key: "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"
+        instance_type: "t2.micro"
+        image: "ami-1987757b"
+        wait: true
+        volumes:
+          - device_name: /dev/sda1
+            volume_size: 10
+            delete_on_termination: true
+        instance_tags:
+          Name: "build node"
+        count: 1
+      register: aws
+
+  tasks:
+    - name: Project
+      ec2:
+        key_name: "MyNewKey"
+        group_id: "sg-bd53b5c4"
+        vpc_subnet_id: "subnet-a3dbc0fa"
+        region: "ap-southeast-2"
+        access_key: "AKIAISVCVU5BLYFOI5KA"
+        secret_key: "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"
+        instance_type: "t2.micro"
+        image: "ami-1987757b"
+        wait: true
+        volumes:
+          - device_name: /dev/sda1
+            volume_size: 10
+            delete_on_termination: true
+        instance_tags:
+          Name: "jenkins server"
+        count: 1
+      register: aws
+
