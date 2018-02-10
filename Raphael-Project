@@ -1,0 +1,21 @@
+פרוייקט גמר SqLink-Devops
+
+1-	יצרתי מכונת CONTROL בamazon
+2-	בניתי בAnsible-Playbook  את המכונות הנוספות
+3-	עשיתי קינפוג ראשוני בJENKINS ומשכתי את הgit source
+4-	עשיתי DOCKERFILE 
+5-	בניתי שלב בגנקינס שאורז את ה War File	
+6-	"יש לשים לב שהכתובת הסופית היא target-ip/build
+7-	בניתי SCRIPT בPYTHON ואני מקבל את ההודעה היפה Welcome to Devops
+
+Target node
+10.0.0.228  - 54.252.135.89
+
+Build Node
+10.0.0.28  -  54.252.235.183
+
+Control Node
+10.0.0.154   -   13.211.138.169
+Jenkins Node
+10.0.0.147  -   13.211.138.169  
+
