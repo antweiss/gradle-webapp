@@ -1,0 +1,8 @@
+- name: docker is installed
+  yum: name={{ item }} state=installed
+  with_items:
+    - docker
+  tags: install_docker
+
+- name: docker is running and enabled
+  service: name=docker state=started enabled=yes
