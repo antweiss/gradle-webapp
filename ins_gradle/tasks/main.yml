@@ -1,0 +1,17 @@
+#- name: get gradle by wget
+#  command: wget https://services.gradle.org/distributions/gradle-4.5-bin.zip
+
+# - name: mkdir
+#   command: sudo mkdir /opt/gradle
+#
+#   - name: unzip is installed
+#     yum: name=unzip state=installed
+#- name: unzip gradle
+#  command: unzip -d /opt/gradle gradle-4.5-bin.zip
+
+#- name: chmod dir
+#  command: chmod +x  /opt/gradle/gradle-4.5/bin/gradle
+
+- name: export path
+  command: export PATH=${PATH}:/opt/gradle/gradle-4.5/bin
+  

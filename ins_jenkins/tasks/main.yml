@@ -1,0 +1,11 @@
+- name: get repo by wget
+  command: wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+  
+- name: import key
+  command: rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+
+- name: jenkins is installed
+  yum: name=jenkins state=installed
+
+- name: jenkins is running and enabled
+  service: name=jenkins state=started enabled=yes

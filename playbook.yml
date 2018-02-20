@@ -1,0 +1,26 @@
+- hosts: targets
+  become: yes
+  tasks:
+  - name: yum update
+    command: yum -y update
+
+- hosts: targets
+  become: yes
+  roles:
+    - ins_ntp
+    - ins_wget
+    - ins_java
+    - ins_python
+
+- hosts: docker
+  become: yes
+  roles: 
+    - ins_docker
+    - ins_tomcat
+
+- hosts: jenkins-server
+  become: yes
+  roles:
+    - ins_jenkins
+    - ins_http
+    - ins_git
